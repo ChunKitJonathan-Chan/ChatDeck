@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Chat Deck</string>
+    <string name="hint_enter_a_message">Enter a message</string>
+    <string name="extra_deckID">deck_id</string>
+    <string name="tv_deckMemberTitle">Members: </string>
+    <string name="tv_deckDescriptionTitle">Description:</string>
+    <string name="create_a_deck">Create a deck</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_icon_url">Icon URL</string>
+    <string name="hint_id">ID</string>
+    <string name="hint_description">Description</string>
+    <string name="btn_create">Create</string>
+    <string name="btn_back">Back</string>
+    <string name="new_deck">new Deck</string>
+    <string name="login_fail">Invalid Username</string>
+</resources>
