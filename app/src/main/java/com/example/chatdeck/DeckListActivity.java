@@ -40,14 +40,14 @@ public class DeckListActivity extends AppCompatActivity {
     User user;
     mImageLoader updateAvatar;
 
-        // For popup dialog
-        AlertDialog.Builder dialogBuilder;
-        AlertDialog dialog;
-
-        EditText popUpCreateDeck_deckId;
-        EditText popUpCreateDeck_deckName;
-        EditText popUpCreateDeck_deckDescription;
-        EditText popUpCreateDeck_deckIcon;
+//        // For popup dialog
+//        AlertDialog.Builder dialogBuilder;
+//        AlertDialog dialog;
+//
+//        EditText popUpCreateDeck_deckId;
+//        EditText popUpCreateDeck_deckName;
+//        EditText popUpCreateDeck_deckDescription;
+//        EditText popUpCreateDeck_deckIcon;
     //  Button popUpCreateDeck_create;
     //  Button popUpCreateDeck_back;
         // end popup dialog
@@ -63,10 +63,10 @@ public class DeckListActivity extends AppCompatActivity {
         deckListRecyclerView = findViewById(R.id.deckRecyclerView);
         welcomeUsername = findViewById(R.id.tv_welcome_username);
         welcomeAvatar = findViewById(R.id.welcome_avatar);
-        popUpCreateDeck_deckId = findViewById(R.id.tv_popupDeckId);
-        popUpCreateDeck_deckName = findViewById(R.id.tv_popupDeckName);
-        popUpCreateDeck_deckDescription = findViewById(R.id.tv_popupDeckDescription);
-        popUpCreateDeck_deckIcon = findViewById(R.id.tv_popupDeckIcon);
+//        popUpCreateDeck_deckId = findViewById(R.id.tv_popupDeckId);
+//        popUpCreateDeck_deckName = findViewById(R.id.tv_popupDeckName);
+//        popUpCreateDeck_deckDescription = findViewById(R.id.tv_popupDeckDescription);
+//        popUpCreateDeck_deckIcon = findViewById(R.id.tv_popupDeckIcon);
 //        popUpCreateDeck_create = findViewById(R.id.btn_popupCreate);
 //        popUpCreateDeck_back = findViewById(R.id.btn_popupBack);
         // end region
@@ -123,7 +123,14 @@ public class DeckListActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.create_deck:
-                popUpCreateDeck();
+                //popUpCreateDeck();
+                Intent intent = new Intent(DeckListActivity.this, CreateDeckActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.logout:
+                userLogout();
+                Intent intent2 = new Intent(DeckListActivity.this, MainActivity.class);
+                startActivity(intent2);
                 return true;
             default:
                 // Do nothing
@@ -131,15 +138,28 @@ public class DeckListActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    // Create pop up form when user clicked on menu item: create_deck
-    public void popUpCreateDeck() {
-        dialogBuilder = new AlertDialog.Builder(this);
-        final View popUp = getLayoutInflater().inflate(R.layout.activity_popup_create_deck, null);
-
-        dialogBuilder.setView(popUp);
-        dialog = dialogBuilder.create();
-        dialog.show();
+    private void userLogout() {
+        CometChat.logout(new CometChat.CallbackListener<String>() {
+            @Override
+            public void onSuccess(String successMessage) {
+                Log.d(TAG, "Logout completed successfully");
+            }
+            @Override
+            public void onError(CometChatException e) {
+                Log.d(TAG, "Logout failed with exception: " + e.getMessage());
+            }
+        });
     }
+
+//    // Create pop up form when user clicked on menu item: create_deck
+//    public void popUpCreateDeck() {
+//        dialogBuilder = new AlertDialog.Builder(this);
+//        final View popUp = getLayoutInflater().inflate(R.layout.activity_popup_create_deck, null);
+//
+//        dialogBuilder.setView(popUp);
+//        dialog = dialogBuilder.create();
+//        dialog.show();
+//    }
 
     // end region
 }

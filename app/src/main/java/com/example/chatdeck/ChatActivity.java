@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.cometchat.pro.constants.CometChatConstants;
@@ -95,6 +97,41 @@ public class ChatActivity extends AppCompatActivity {
         initMessageInput();
         initMessageReceive();
     }
+
+    // region Menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.chat_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.chatlogout:
+                userLogout();
+                Intent intent = new Intent(ChatActivity.this, MainActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                // Do nothing
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void userLogout() {
+        CometChat.logout(new CometChat.CallbackListener<String>() {
+            @Override
+            public void onSuccess(String successMessage) {
+                Log.d(TAG, "Logout completed successfully");
+            }
+            @Override
+            public void onError(CometChatException e) {
+                Log.d(TAG, "Logout failed with exception: " + e.getMessage());
+            }
+        });
+    }
+    // end region
 
     // region Get and display chat history
     private void initMessageHistory() {

@@ -13,4 +13,6 @@
     <string name="btn_back">Back</string>
     <string name="new_deck">new Deck</string>
     <string name="login_fail">Invalid Username</string>
+    <string name="warn_cannotempty">ID &amp; name cannot be empty.</string>
+    <string name="logout">logout</string>
 </resources>

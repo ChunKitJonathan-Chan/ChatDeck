@@ -5,6 +5,7 @@
     android:id="@+id/deckListContainer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#EDFAEBEB"
     android:orientation="vertical"
     android:padding="8dp">
 
@@ -15,7 +16,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="#F1E2E2">
 
             <ImageView
                 android:id="@+id/iv_deckIcon"
@@ -31,7 +33,6 @@
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackground"
                 android:padding="16dp"
-                android:text="testing kasjfdlka sjd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -48,7 +49,7 @@
                 android:layout_height="28dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:background="#FFFFFF"
+                android:background="#F1E2E2"
                 android:scaleType="centerInside"
                 android:tint="#3EFFFFFF"
                 android:visibility="invisible"
@@ -61,6 +62,7 @@
                 android:id="@+id/rv_expandable"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:background="#EDFAEBEB"
                 android:visibility="gone"
                 app2:layout_constraintEnd_toEndOf="parent"
                 app2:layout_constraintHorizontal_bias="0.0"
@@ -89,7 +91,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="16dp"
-                    android:text="TextView"
                     android:visibility="gone"
                     app:layout_constraintStart_toEndOf="@+id/tv_deckMemberTitle"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -101,7 +102,7 @@
 
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
-                    android:padding="16dp"
+                    android:padding="24dp"
                     android:text="@string/tv_deckDescriptionTitle"
                     android:visibility="gone"
                     app:layout_constraintStart_toStartOf="parent"
@@ -115,7 +116,6 @@
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp"
-                    android:text="The strength of this country isn’t in buildings of brick and steel. It’s in the hearts of those who have sworn to fight for its freedom!"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

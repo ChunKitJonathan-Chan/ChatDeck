@@ -7,4 +7,9 @@
         android:icon="@drawable/ic_action_name"
         android:title="@string/create_a_deck"
         app:showAsAction="always" />
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/ic_logout"
+        android:title="@string/logout"
+        app:showAsAction="always" />
 </menu>
