@@ -97,10 +97,10 @@
 
                 <TextView
                     android:id="@+id/tv_deckDescriptionTitle"
-                    android:layout_width="108dp"
-                    android:layout_height="51dp"
+                    android:layout_width="127dp"
+                    android:layout_height="74dp"
 
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
                     android:padding="24dp"
                     android:text="@string/tv_deckDescriptionTitle"
@@ -112,9 +112,8 @@
                     android:id="@+id/tv_deckDescription"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
+                    android:layout_marginStart="24dp"
                     android:layout_marginTop="32dp"
-                    android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
